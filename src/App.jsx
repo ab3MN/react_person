@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { Person } from './components/Person/Person';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 export const misha = {
   name: 'Misha',
@@ -26,8 +27,10 @@ export const alex = {
 
 export const App = () => (
   <div className="App">
-    <Person person={misha} />
-    <Person person={olya} />
-    <Person person={alex} />
+    <ErrorBoundary>
+      <Person person={misha} />
+      <Person person={olya} />
+      <Person person={alex} />
+    </ErrorBoundary>
   </div>
 );
